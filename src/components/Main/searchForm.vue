@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <searchModal v-if="show" @closeModal="closeModal" :tradeList="tradeList" />
     <div class="form">
       <div>
         <select name="" id="" v-model="serverSelect">
@@ -47,7 +48,10 @@
 
 <script>
 import { searchTrade, searchTradeKeyword } from '@/api/trade';
+import MODAL_MIXIN from '@/mixin/modalMix.js';
+import searchModal from '@/components/modal/searchModal.vue';
 export default {
+  mixins: [MODAL_MIXIN],
   data() {
     return {
       inputData: '',
@@ -56,7 +60,11 @@ export default {
       timer: null,
       keyword: null,
       currentCount: -1,
+      tradeList: [],
     };
+  },
+  components: {
+    searchModal,
   },
   mounted() {
     let input = document.getElementById('inputData');
@@ -85,12 +93,14 @@ export default {
       } else if (event.keyCode == 13) {
         event.preventDefault();
         if (this.currentCount > -1) {
-          if (x) input.value = x[this.currentCount].lastChild.innerText;
+          if (x) this.inputData = x[this.currentCount].lastChild.innerText;
           key.style.display = 'none';
-          document.getElementById('searchBtn');
           this.removeActive(x);
           this.currentCount = -1;
+          this.searchItem();
           return;
+        } else {
+          this.searchItem();
         }
       }
       try {
@@ -117,14 +127,20 @@ export default {
   },
   methods: {
     async searchItem() {
+      if (this.inputData.length < 1) {
+        alert('검색어를 입력해주세요.');
+        return;
+      }
       try {
         const req = {
           server: this.serverSelect,
           inputData: this.inputData,
           type: this.typeSelect,
         };
-        const res = await searchTrade(req);
-        console.log(res);
+        const { data } = await searchTrade(req);
+        this.tradeList = data;
+        console.log(data);
+        this.showModal();
       } catch (error) {
         console.log(error);
       }
