@@ -1,16 +1,15 @@
 <template>
   <div class="main">
     <img :src="require('@/assets/fox.png')" alt="" />
-    <tradeForm />
+    <satongForm />
   </div>
 </template>
 
 <script>
-import tradeForm from '@/components/Main/tradeForm';
-
+import satongForm from '@/components/Satong/satongForm';
 export default {
   components: {
-    tradeForm,
+    satongForm,
   },
 };
 </script>

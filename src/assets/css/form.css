@@ -1,0 +1,65 @@
+.form {
+    width: 750px;
+  }
+  .home {
+    position: relative;
+  }
+  select,
+  option {
+    padding: 15px 32px;
+    border: none;
+    margin: 0.5%;
+  }
+  input[type='text'] {
+    padding: 13px 32px;
+    border: none;
+    margin: 0.5%;
+  }
+  .button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 20px 38px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  input[type='submit'],
+  input[type='text'],
+  select {
+    font-size: 20px;
+  }
+  .keyword {
+    position: absolute;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 39%;
+    right: 20%;
+  }
+  .item {
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    border-bottom: 1px solid gray;
+    border-radius: 8px 12px;
+    padding: 1%;
+    cursor: pointer;
+  }
+  
+  .item-img {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+  }
+  .autocomplete-active {
+    background-color: bisque;
+  }
+  .highlight {
+    font-weight: bold;
+  }

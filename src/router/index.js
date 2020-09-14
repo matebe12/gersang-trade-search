@@ -9,6 +9,11 @@ const routes = [
     name: 'main',
     component: () => import('@/views/Main.vue'),
   },
+  {
+    path: '/satong',
+    name: 'satong',
+    component: () => import('@/views/Satong.vue'),
+  },
 ];
 
 const router = new VueRouter({
