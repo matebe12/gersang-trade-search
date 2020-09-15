@@ -15,7 +15,7 @@
   vertical-align: middle;
 }
 .modal .container {
-  width: 600px;
+  width: 1200px;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   border-radius: 2px;
@@ -24,6 +24,12 @@
 }
 .content {
   font-family: 'Poor Story', cursive;
+}
+.flex-box {
+  display: flex;
+}
+.both  {
+  width: 50%;
 }
 .header {
   border-bottom: 1px solid;
@@ -54,6 +60,7 @@ thead {
 .content-table {
   height: 600px;
   overflow-y: auto;
+  width: 100%;
 }
 .modal-enter {
   opacity: 0;

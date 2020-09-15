@@ -7,12 +7,15 @@
         :tradeList="tradeList"
         :typeSelect="typeSelect"
         :serverSelect="serverSelect"
+        :inputData="inputData"
+        :mercList="mercList"
       />
     </template>
     <template v-slot:serverSelect></template>
     <template slot="type">
       <select name="" id="" v-model="typeSelect">
         <option value="1">아이템</option>
+        <option value="2">아이디</option>
         <option value="3">용병</option>
       </select>
     </template>
@@ -67,6 +70,8 @@ export default {
       keyword: null,
       currentCount: -1,
       tradeList: [],
+      inputData: '',
+      mercList: [],
     };
   },
   components: {
@@ -115,6 +120,7 @@ export default {
         this.removeActive(x);
         this.currentCount = -1;
       }
+      this.inputData = input.value;
       try {
         if (this.typeSelect == '1') {
           if (this.timer) clearTimeout(this.timer);
@@ -151,8 +157,18 @@ export default {
           inputData: document.getElementById('inputData').value,
           type: this.typeSelect,
         };
-        const { data } = await getTradeList(req);
-        this.tradeList = data.sort();
+
+        if (req.type != 2) {
+          const { data } = await getTradeList(req);
+          this.tradeList = data.sort();
+        } else {
+          debugger;
+          const { item, merc } = await getTradeList(req);
+
+          console.log(item.data, merc.data);
+          this.tradeList = item.data.sort();
+          this.mercList = merc.data.sort();
+        }
         this.showModal();
       } catch (error) {
         alert(error);
@@ -174,6 +190,7 @@ export default {
       let key = document.getElementById('keyword');
       let x = key.getElementsByClassName('item');
       document.getElementById('inputData').value = x[i].lastChild.innerText;
+      this.inputData = x[i].lastChild.innerText;
       this.removeActive(x);
       key.style.display = 'none';
       this.currentCount = -1;

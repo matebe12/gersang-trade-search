@@ -58,6 +58,36 @@ export default {
       case '3':
         this.serverName = '현무';
         break;
+      case '4':
+        this.serverName = '청룡';
+        break;
+      case '5':
+        this.serverName = '봉황';
+        break;
+      case '6':
+        this.serverName = '해태';
+        break;
+      case '7':
+        this.serverName = '세종';
+        break;
+      case '8':
+        this.serverName = '신구';
+        break;
+      case '9':
+        this.serverName = '단군';
+        break;
+      case '10':
+        this.serverName = '비호';
+        break;
+      case '11':
+        this.serverName = '태극';
+        break;
+      case '12':
+        this.serverName = '화랑';
+        break;
+      case '13':
+        this.serverName = '태황';
+        break;
     }
   },
   methods: {

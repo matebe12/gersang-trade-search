@@ -5,11 +5,29 @@ async function getTradeKeyword(data) {
 }
 
 async function getTradeList(data) {
-  return data.type == 1
-    ? await trade.get(`/${data.server}/${data.inputData}?type=${data.type}`)
-    : await trade.get(
+  try {
+    if (data.type == 1) {
+      return await trade.get(
+        `/${data.server}/${data.inputData}?type=${data.type}`,
+      );
+    } else if (data.type == 2) {
+      let userTrade = {};
+      userTrade.item = await trade.get(
+        `/${data.server}/${data.inputData}?type=${data.type}`,
+      );
+      userTrade.merc = await trade.get(
         `/merc/${data.server}/${data.inputData}?type=${data.type}`,
       );
+      console.log(userTrade);
+      return userTrade;
+    } else {
+      return await trade.get(
+        `/merc/${data.server}/${data.inputData}?type=${data.type}`,
+      );
+    }
+  } catch (error) {
+    alert(error);
+  }
 }
 async function getTradeListAvg(data) {
   return await trade.get(

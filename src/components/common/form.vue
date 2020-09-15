@@ -8,6 +8,16 @@
             <option value="1">백호</option>
             <option value="2">주작</option>
             <option value="3">현무</option>
+            <option value="4">청룡</option>
+            <option value="5">봉황</option>
+            <option value="6">해태</option>
+            <option value="7">세종</option>
+            <option value="8">신구</option>
+            <option value="9">단군</option>
+            <option value="10">비호</option>
+            <option value="11">태극</option>
+            <option value="12">화랑</option>
+            <option value="13">태왕</option>
           </select>
         </slot>
 
