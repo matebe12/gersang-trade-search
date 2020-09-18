@@ -158,14 +158,14 @@ export default {
           type: this.typeSelect,
         };
 
-        if (req.type != 2) {
+        if (req.type == 1) {
           const { data } = await getTradeList(req);
           this.tradeList = data.sort();
+        } else if (req.type == 3) {
+          const { data } = await getTradeList(req);
+          this.mercList = data.sort();
         } else {
-          debugger;
           const { item, merc } = await getTradeList(req);
-
-          console.log(item.data, merc.data);
           this.tradeList = item.data.sort();
           this.mercList = merc.data.sort();
         }
