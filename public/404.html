@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-  <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>My App</title>
+    <script>
+      // ========================================
+      // Credits:
+      // - https://stackoverflow.com/a/50259501
+      // - https://stackoverflow.com/a/50247140
+      // ========================================
+      const segment = 1
+
+      sessionStorage.redirect = '/' + location.pathname.slice(1).split('/').slice(segment).join('/')
+
+      location.replace(
+        location.pathname.split('/').slice(0, 1 + segment).join('/')
+      )
+    </script>
   </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    
-    <!-- built files will be auto injected -->
-  </body>
 </html>
