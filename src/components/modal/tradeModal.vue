@@ -125,7 +125,8 @@ export default {
 
     if (this.typeSelect == 1 && this.itemData[0].hasOwnProperty('series')) {
       this.itemData[0].series.reverse();
-      this.createChart('minmaxCanvas', this.chartData);
+      if (this.chartData.length > 0)
+        this.createChart('minmaxCanvas', this.chartData);
     }
   },
   methods: {

@@ -87,7 +87,9 @@ export default {
       //for (var i = 0; i < x.length; i++) {
       if (e.target != x && e.target != inp) {
         let key = document.getElementById('keyword');
-        key.style.display = 'none';
+        if (key) {
+          key.style.display = 'none';
+        }
       }
       //}
     });

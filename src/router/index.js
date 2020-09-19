@@ -14,6 +14,15 @@ const routes = [
     name: 'satong',
     component: () => import('@/views/Satong.vue'),
   },
+  {
+    path: '/404',
+    name: '404error',
+    component: () => import('@/components/common/404error.vue'),
+  },
+  {
+    path: '*',
+    redirect: '/404',
+  },
 ];
 
 const router = new VueRouter({
