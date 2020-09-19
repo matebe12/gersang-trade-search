@@ -2,7 +2,13 @@
   <transition name="modal">
     <div class="modal">
       <div class="wrapper">
-        <div class="container">
+        <div
+          class="container"
+          id="container"
+          tabindex="1"
+          @blur="closeModal"
+          onload="this.focus()"
+        >
           <div class="header">
             <div class="title">
               <slot name="title"></slot>
@@ -24,6 +30,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    document.getElementById('container').focus();
+  },
+  methods: {
+    closeModal() {
+      this.$emit('closeModal');
+    },
+  },
+};
 </script>
 <style src="@/assets/css/modal.css"></style>

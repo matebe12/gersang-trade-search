@@ -15,7 +15,7 @@
   vertical-align: middle;
 }
 .modal .container {
-  width: 1200px;
+  width: 90%;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   border-radius: 2px;
@@ -29,7 +29,7 @@
   display: flex;
 }
 .both  {
-  width: 50%;
+  height: 50%;
 }
 .header {
   border-bottom: 1px solid;
@@ -52,7 +52,7 @@
   height: 40px;
 }
 thead th {
-  padding: 30px;
+  padding: 0.5%;
 }
 thead {
   background: beige;
@@ -66,7 +66,8 @@ thead {
   opacity: 0;
 }
 table {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     border-collapse:collapse;
 }
 tbody td {
@@ -83,6 +84,9 @@ tbody > tr:nth-child(2n+2){
 }
 .container h1 {
   text-align: center;
+}
+.container:focus{
+  outline: none;
 }
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
@@ -108,4 +112,23 @@ tbody > tr:nth-child(2n+2){
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media (max-width: 768px) {
+  .flex-box {
+    display: block;
+  }
+  .both  {
+    height: 300px;
+    border-radius: 2px;
+  }
+  .modal .container {
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    margin: 0px auto;
+  }
+  
 }

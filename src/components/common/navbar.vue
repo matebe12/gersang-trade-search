@@ -25,6 +25,7 @@ export default {};
   font-family: 'Poor Story', cursive;
   background: #141d24;
   border-radius: 2px;
+  width: 100%;
 }
 .navbar ul {
   display: flex;
@@ -38,6 +39,7 @@ export default {};
 .navbar ul li {
   transition-delay: 1s;
   transition: 1s;
+  margin: 12px;
 }
 .navbar ul li:hover {
   border-bottom: solid 1px white;

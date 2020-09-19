@@ -1,5 +1,5 @@
 <template>
-  <modal>
+  <modal @closeModal="closeModal">
     <template slot="title">
       <span>육의전 정보</span>
     </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <img :src="require('@/assets/fox.png')" alt="" />
+    <img :src="require('@/assets/fox.png')" alt="" class="backimg" />
     <tradeForm />
   </div>
 </template>

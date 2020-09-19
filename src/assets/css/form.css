@@ -1,46 +1,53 @@
 .form {
-    width: 750px;
+    width: 100%;
   }
   .home {
     position: relative;
   }
   select,
   option {
-    padding: 15px 32px;
     border: none;
     margin: 0.5%;
+    width: 20%;
+    height: 60px;
   }
   input[type='text'] {
-    padding: 13px 32px;
     border: none;
     margin: 0.5%;
+    width: 250px;
+    height: 59px;
+  }
+  input:focus{
+    outline: none;
   }
   .button {
     background-color: #4caf50;
     border: none;
     color: white;
-    padding: 20px 38px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    width: 20%;
+    height: 65px;
   }
   input[type='submit'],
   input[type='text'],
+  .button,
   select {
     font-size: 20px;
+    vertical-align:middle; 
   }
   .keyword {
     position: absolute;
     border-bottom: none;
     border-top: none;
     z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
     top: 100%;
-    left: 39%;
-    right: 20%;
+    left: 54.3%;
+    width: 250px;
   }
   .item {
     background-color: #ffffff;
@@ -62,4 +69,74 @@
   }
   .highlight {
     font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .form {
+      width: 100%;
+    }
+    .home {
+      position: relative;
+    }
+    select,
+    option {
+      border: none;
+      margin: 0.5%;
+      width: 20%;
+      height: 40px;
+    }
+    input[type='text'] {
+      border: none;
+      margin: 0.5%;
+      width: 30%;
+      height: 40px;
+    }
+    .button {
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      width: 20%;
+      height: 45px;
+    }
+    input[type='submit'],
+    input[type='text'],
+    select {
+      font-size: 12px;
+    }
+    .keyword {
+      position: absolute;
+      border-bottom: none;
+      border-top: none;
+      z-index: 99;
+      top: 100%;
+      width: 32%;
+      left: 44.5%;
+    }
+    .item {
+      background-color: #ffffff;
+      text-align: center;
+      display: flex;
+      border-bottom: 1px solid gray;
+      border-radius: 8px 12px;
+      padding: 1%;
+      cursor: pointer;
+    }
+    
+    .item-img {
+      text-align: center;
+      width: 40px;
+      height: 40px;
+    }
+    .autocomplete-active {
+      background-color: bisque;
+    }
+    .highlight {
+      font-weight: bold;
+    }
   }
