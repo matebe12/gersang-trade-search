@@ -26,16 +26,16 @@ export default {};
 .err {
   color: #ffffff;
   font-family: 'Poor Story', cursive;
-  font-size: 8rem;
+  font-size: 10.5rem;
   position: absolute;
-  left: 20%;
+  left: 25%;
   top: 8%;
 }
 
 .far {
   position: absolute;
-  font-size: 5rem;
-  left: 42%;
+  font-size: 7rem;
+  left: 45%;
   top: 15%;
   color: #ffffff;
 }
@@ -43,7 +43,7 @@ export default {};
 .err2 {
   color: #ffffff;
   font-family: 'Poor Story', cursive;
-  font-size: 8rem;
+  font-size: 10.5rem;
   position: absolute;
   left: 68%;
   top: 8%;
@@ -73,6 +73,30 @@ a:hover {
     height: 600px;
     width: 300px;
     position: relative;
+  }
+  .err {
+    color: #ffffff;
+    font-family: 'Poor Story', cursive;
+    font-size: 8rem;
+    position: absolute;
+    left: 20%;
+    top: 8%;
+  }
+
+  .far {
+    position: absolute;
+    font-size: 5rem;
+    left: 45%;
+    top: 15%;
+    color: #ffffff;
+  }
+  .err2 {
+    color: #ffffff;
+    font-family: 'Poor Story', cursive;
+    font-size: 8rem;
+    position: absolute;
+    left: 73%;
+    top: 8%;
   }
 }
 </style>
